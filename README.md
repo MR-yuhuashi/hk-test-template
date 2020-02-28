@@ -1,45 +1,23 @@
 # web-template
 
+
 ## 单元测试
-* 简介：https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%AE%80%E4%BB%8B
-* 规范：https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83
-### 技术栈
+这里有一些关于单元测试相关的介绍，我直接引用自己之前总结的单元测试简介和常用规范两篇文章。单测规范的文章主要参考了一篇国外的文档javascript-testing-best-practices，结合自己的理解对这篇文章进行了翻译和补充。关于文章后半部分，因为缺少CI的相关实践所以暂时还没有充分的理解，后面会再做补充完善。
+### 单元测试简介
+* https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%AE%80%E4%BB%8B
+
+### 单元测试规范
+* https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83
+
+### vue相关技术栈
+vue-test-utils：https://vue-test-utils.vuejs.org/zh/提供了组件测试的相关解决方法，底层基于Mocha，Chai，Sinon，Jsdom等；当然我们对函数等工具库编写单测的时候可以灵活搭配Mocha，Jest，Chai等使用。
+
 #### Mocha: https://mochajs.org/
 * （还有jest）是一个运行测试的框架
 
-#### Chai: https://www.chaijs.com/api/assert/
-* https://www.npmjs.com/package/chai
+#### Chai: https://www.chaijs.com/api/assert/，https://www.npmjs.com/package/chai
 * 是一个支持多种风格（比如 expect、should 和 assert）的断言库。
 
-#### Karma: https://www.npmjs.com/package/karma
-* 不是测试框架，也不是断言库；而是一个测试运行器，test runner。可以在不同的真实浏览器或者CI上运行test case。
-
-#### vue-test-utils
-* 是 Vue.js 官方的单元测试实用工具库。
-* 实现技术栈：chai,mocha,sinon,karma
-
-### 编写思路
-* 给函数写
-* 给service写
-* 给组件写
-
-### 编写难点
-* 特性：
-钩子
 
 
-mock
-* 各个场景的模拟：回调函数-sinon、Timer函数（setTimeout，clearTimeout等）
 
-### 测试报告
-
-挂载组件，测试组件渲染出来的HTML，模拟用户交互，测试nextTick。
-
-UI常用技巧：
-* 明白要测试的是什么：只关注输入与输出，不关注细节，不追求100%的覆盖率。
-* 浅渲染，只关注单独的组件，不关注子组件。
-
-
-mocha-each: npm install --save-dev mocha-each
-
-cookie的document和window是怎么处理的
