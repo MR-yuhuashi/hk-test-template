@@ -1,11 +1,13 @@
 
 
 const isArray = (source) => {
-  if (Array.isArray) return Array.isArray(source);
+  if (Array.isArray) {
+    return Array.isArray(source);
+  }
   return source instanceof Array;
 };
 
-/** 通过key和value查询对象 */
+/** 通过key和value查询对象 TODO 看不懂，方法有问题*/
 const findByKey = (arr, key, val) => {
   if (!(arr instanceof Array)) {
     return null;
@@ -52,5 +54,5 @@ export {
   isArray,
   findByKey,
   sortArrayByKey,
-  hasSameItem,
+  hasSameItem
 };

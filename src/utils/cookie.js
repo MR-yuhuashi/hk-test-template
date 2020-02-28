@@ -10,7 +10,7 @@ function setCookie(name, value) {
 }
 
 function setStorage(name, value) {
-  window.localStorage.setItem(name, value);
+  return window.localStorage.setItem(name, value);
 }
 
 function getStorage(name) {
@@ -41,7 +41,9 @@ function delCookie(name) {
   const exp = new Date();
   exp.setTime(exp.getTime() - 1);
   const cval = getCookie(name);
-  if (cval != null) document.cookie = `${name}=${cval};expires=${exp.toGMTString()}`;
+  if (cval !== null) {
+    document.cookie = `${name}=${cval};expires=${exp.toGMTString()}`;
+  }
 }
 
 
@@ -66,5 +68,5 @@ export {
   getCookieServer,
   setStorage,
   getStorage,
-  delStorage,
+  delStorage
 };

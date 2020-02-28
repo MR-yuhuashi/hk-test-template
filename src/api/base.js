@@ -33,20 +33,30 @@ export default class BaseModel {
                 this.cancelToken = c;
             })
         };
+        return axios(_params).then((res) => {
+            return res.data;
+        }).catch(err => {
+            const { data, status } = err.response;
+            return {
+                errMsg: data,
+                errStatus: status
+            };
+        });
 
-        return axios(_params)
-            .then((res) => {
-                const { data, data: { resultCode, resultMsg } } = res;
-                if (resultCode === 0) {
-                    return Promise.resolve(data);
-                }
-                return Promise.reject({ errNo: resultCode, errMsg: resultMsg, params: _params });
-            })
-            .catch((res) => {
-                const { status, statusText } = res;
-                this._handleError({ errNo: status, errMsg: statusText, params: _params });
-                return Promise.resolve();
-            });
+        // return axios(_params)
+        //     .then((res) => {
+        //         const { data, data: { resultCode, resultMsg } } = res;
+        //         if (resultCode === 0) {
+        //             console.log('data', data);
+        //             return Promise.resolve(data);
+        //         }
+        //         return Promise.reject({ errNo: resultCode, errMsg: resultMsg, params: _params });
+        //     })
+        //     .catch((res) => {
+        //         const { status, statusText } = res;
+        //         this._handleError({ errNo: status, errMsg: statusText, params: _params });
+        //         return Promise.resolve();
+        //     });
     }
 
     /**
