@@ -14,9 +14,19 @@
 
 ### 编写示例
 * 技术选型：Jest，@vue/test-utils
-* 常用API：describe，test，expect
-* 测试命令：jest add.spec.js 或 npm run test:unit
-* 覆盖率命令：jest add.spec.js --coverage 或 npm run test:unit --coverage
+* 常用API：describe()，test()，expect()
+* 测试命令：
+```
+jest add.spec.js 
+ // or 通过package.json配置
+npm run test:unit
+```
+* 覆盖率命令：
+```
+jest add.spec.js --coverage
+// or 通过package.json配置
+npm run test:unit --coverage
+```
 ##### 以测试add方法为例
 ```
 // add.js
