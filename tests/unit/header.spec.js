@@ -1,29 +1,28 @@
-import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
 import Header from '../../src/components/header/index.vue';
 import sinon from 'sinon';
 
 describe('Header.vue', () => {
-  it('renders correct text', () => {
+  test('renders correct text', () => {
       const wrapper = shallowMount(Header);
 
-      expect(wrapper.text()).to.include('Header');
+      expect(wrapper.text()).toMatch('Header');
 
-      expect(wrapper.vm.msg).to.equal('Header');
+      expect(wrapper.vm.msg).toBe('Header');
 
   });
 
-  it('renders correct state', () => {
+  test('renders correct state', () => {
       const wrapper = shallowMount(Header);
 
-      expect(wrapper.vm.msg).to.equal('Header');
+      expect(wrapper.vm.msg).toBe('Header');
 
       wrapper.setData({ msg: 'New Header' });
       
-      expect(wrapper.vm.msg).to.equal('New Header');
+      expect(wrapper.vm.msg).toBe('New Header');
   });
 
-  it('trigger button method', () => {
+  test('trigger button method', () => {
       const wrapper = shallowMount(Header);
 
       const clickMethodStub = sinon.stub()
@@ -31,7 +30,7 @@ describe('Header.vue', () => {
 
       wrapper.find('button').trigger('click')
 
-      expect(clickMethodStub.called).to.equal(true)
+      expect(clickMethodStub.called).toBe(true)
 
   });
 });

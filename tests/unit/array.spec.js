@@ -1,6 +1,5 @@
 import { isArray } from '../../src/utils/array';
-import { expect } from 'chai';
-import forEach from 'mocha-each';
+import each from 'jest-each';
 
 describe('isArray', () => {
   const data = [
@@ -12,7 +11,7 @@ describe('isArray', () => {
     ['Object', {}, false],
     ['Array', [], true]
   ];
-  forEach(data).it('type %s such as %j will return %j', (type, item, expected) => {
-    expect(isArray(item)).to.be[expected];
+  each(data).it('type %s such as %j will return %j', (type, item, expected) => {
+    expect(isArray(item)).toBe[expected];
   });
 });
