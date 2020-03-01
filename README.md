@@ -7,9 +7,9 @@
 * https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%AE%80%E4%BB%8B
 
 ### 所选技术栈
-##### vue-test-utils：https://vue-test-utils.vuejs.org/zh/
+#### 1、vue-test-utils：https://vue-test-utils.vuejs.org/zh/
 提供了vue编写的组件测试的相关解决方法，底层基于Mocha，Chai，Sinon，Jsdom等；当然我们对函数等工具库编写单测的时候可以灵活搭配Mocha，Jest，Chai等使用。
-##### jest：https://jestjs.io/en/
+#### 2、jest：https://jestjs.io/en/
 开箱即用，是一个集成框架，集成了断言库，覆盖率报告等多种功能。
 
 ### 编写示例
