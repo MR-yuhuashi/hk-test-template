@@ -38,6 +38,44 @@ describe('add', () => {
 });
 
 ```
+执行测试用例通过，会打印如下信息：
+```
+PASS  tests/unit/add.spec.js
+  add
+    ✓ 1+2 equals 3 (2ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.587s, estimated 1s
+```
+未通过打印如下：
+```
+ FAIL  tests/unit/add.spec.js
+  add
+    ✕ 1+2 equals 3 (3ms)
+
+  ● add › 1+2 equals 3
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 6
+    Received: 3
+
+      3 | describe('add', () => {
+      4 |   test('1+2 equals 3', () => {
+    > 5 |     expect(add(1, 2)).toBe(6);
+        |                       ^
+      6 |   });
+      7 | });
+
+      at Object.<anonymous> (tests/unit/add.spec.js:5:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        0.807s, estimated 1s
+```
 
 ### 如何分析覆盖率报告
 * https://github.com/MR-yuhuashi/art-core/wiki/jest%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A%E5%88%86%E8%A7%A3
