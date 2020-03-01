@@ -1,7 +1,8 @@
 # web-template
 
 ## 单元测试
-这里有一些关于单元测试相关的介绍，单元测试编写的文章主要参考了一篇国外的文档javascript-testing-best-practices，结合自己的理解对这篇文章进行了翻译和补充。关于文章后半部分，因为缺少CI的相关实践所以暂时还没有充分的理解，后面会再做补充完善。
+这里有一些关于单元测试相关的介绍。
+
 ### 单元测试简介
 * https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%AE%80%E4%BB%8B
 
@@ -16,7 +17,7 @@
 * 常用API：describe，test，expect
 * 测试命令：jest add.spec.js 或 npm run test:unit
 * 覆盖率命令：jest add.spec.js --coverage 或 npm run test:unit --coverage
-#### 以测试add方法为例
+##### 以测试add方法为例
 ```
 // add.js
 
@@ -43,3 +44,4 @@ describe('add', () => {
 
 ### 单元测试编写规范
 * https://github.com/MR-yuhuashi/art-core/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%BC%96%E5%86%99%E8%A7%84%E8%8C%83
+单元测试编写的文章主要参考了一篇国外的文档javascript-testing-best-practices，结合自己的理解对这篇文章进行了翻译和补充。关于文章后半部分，因为缺少CI的相关实践所以暂时还没有充分的理解，后面会再做补充完善。
